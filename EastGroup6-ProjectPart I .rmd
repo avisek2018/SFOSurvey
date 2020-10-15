@@ -14,20 +14,28 @@ knitr::opts_chunk$set(echo = TRUE)
 2.  Is there any pattern between the satisfaction with various SFO facilities/services and income and/or gender and/or age?  
 3.  Does there appear to be any pattern between the purpose of your trip today and the overall feeling of cleanliness at the airport?  
 
-We considered that comments are correlated with ratings for some of the questions.  We will wait for further analysis before determining this.
+We considered that comments are correlated with ratings for some of the questions.  We will wait to determine this a little later in the analysis.  
 
 
 ```{r readData, message=FALSE, warning=FALSE, error=TRUE}
+#Clear the environment
+rm(list=ls())
+
 #Import the libraries
 library(tidyverse)
 library(haven)
 library(plotly)
 
-
 #Read the data set
 sfoDf <- read_delim('C:/MSDS/Fall 2020/Behavioral Data Science/Project/SFO_survey_withText.txt', delim="\t")
 head(sfoDf)
 ```
+
+```{r}
+#Provide basic statistics of the data
+summary(sfoDf)
+```
+
 
 ```{r countingNA, message=FALSE, warning=FALSE, error=TRUE }
 #Count the NA or missing Rows for each columns
