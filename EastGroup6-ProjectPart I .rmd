@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 ## Research Questions 
 
 1.  Is there any correlation between overall feeling of safety and age and/or income and/or gender and/or frequency of travel?  
