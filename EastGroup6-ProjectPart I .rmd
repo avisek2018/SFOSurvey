@@ -22,6 +22,7 @@ We considered that comments are correlated with ratings for some of the question
 library(tidyverse)
 library(haven)
 library(plotly)
+library(reshape2)
 
 #Read the data set
 sfoDf <- read_delim('C:/MSDS/Fall 2020/Behavioral Data Science/Project/SFO_survey_withText.txt', delim="\t")
@@ -34,15 +35,6 @@ summary(sfoDf)
 ```
 
 
-=======
-library(reshape2)
-
-#Read the data set
-sfoDf <- read_delim('SFO_survey_withText.txt', delim="\t")
-head(sfoDf)
-```
-
->>>>>>> f6466c1d01b2ec89cda98e831ab034351c93d521
 ```{r countingNA, message=FALSE, warning=FALSE, error=TRUE }
 #Count the NA or missing Rows for each columns
 sapply(sfoDf, function(x) sum(is.na(x)))
@@ -172,9 +164,6 @@ p
 
 ```
 
-<<<<<<< HEAD
-=======
-
 Let's take a look at cleanliness responses grouped by various attributes (gender, income, age, etc.)
 ```{r}
 cleanliness_data <- sfoDf %>%
@@ -244,4 +233,4 @@ ggplot(cleanliness_data, aes(x=Income)) +
   labs(title="Cleanliness Comment Count by Income and Gender")+ 
   theme(axis.text.x = element_text(angle = 30, vjust = 0.7))
 ```
->>>>>>> f6466c1d01b2ec89cda98e831ab034351c93d521
+
